@@ -29,12 +29,12 @@ export default function TodoContainer() {
   return (
     <>
       <Header />
-      <main>
-        <section>
+      <main className="container mx-auto p-4">
+        <section className="">
           <TodoList todos={todos} onClick={toggleCompleted} />
           <AddTodo onSubmit={addTodo} />
         </section>
-        <section>
+        <section className="">
           <TodoSummary todos={todos} />
         </section>
       </main>
