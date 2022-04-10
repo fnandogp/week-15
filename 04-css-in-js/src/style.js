@@ -1,7 +1,16 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const Root = styled.div`
   text-align: center;
+`
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 `
 
 export const AppLogo = styled.img`
@@ -9,7 +18,7 @@ export const AppLogo = styled.img`
   pointer-events: none;
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: App-logo-spin infinite 20s linear;
+    animation: ${rotate} infinite 20s linear;
   }
 `
 
@@ -23,15 +32,6 @@ export const Header = styled.header`
   font-size: calc(10px + 2vmin);
   color: white;
 `
-
-//@keyframes App-logo-spin {
-//from {
-//transform: rotate(0deg);
-//}
-//to {
-//transform: rotate(360deg);
-//}
-//}
 
 export const Button = styled.button`
   font-size: calc(10px + 2vmin);
