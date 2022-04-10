@@ -3,8 +3,7 @@ export default function TodoSummary({ todos }) {
   const completedTodos = todos.filter((todo) => todo.completed)
 
   return (
-    <div>
-      <hr />
+    <div className="bg-gray-200 p-4 rounded-sm">
       <p>Open: {openTodos.length}</p>
       <p>Completed: {completedTodos.length}</p>
     </div>
