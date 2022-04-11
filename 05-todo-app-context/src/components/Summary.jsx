@@ -1,6 +1,6 @@
 import { useTodoList } from '../utils/useTodoList.jsx'
 
-export default function TodoSummary({}) {
+export default function Summary({}) {
   const { todos } = useTodoList()
 
   const openTodos = todos.filter((todo) => !todo.completed)

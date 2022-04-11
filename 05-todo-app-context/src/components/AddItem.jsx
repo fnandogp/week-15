@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTodoList } from '../utils/useTodoList.jsx'
 
-export default function AddTodo({}) {
+export default function AddItem({}) {
   const { add } = useTodoList()
   const [description, setDescription] = useState('')
 
@@ -9,13 +9,14 @@ export default function AddTodo({}) {
     setDescription(event.target.value)
   }
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     add(description)
     setDescription('')
   }
 
   return (
-    <div className="flex justify-start space-x-4">
+    <form className="flex justify-start space-x-4" onSubmit={handleSubmit}>
       <input
         type="text"
         className="border border-solid border-gray-400 px-2 py-1 rounded-sm"
@@ -24,13 +25,12 @@ export default function AddTodo({}) {
       />
 
       <button
-        type="button"
+        type="submit"
         className="bg-red-400 hover:bg-red-600 p-2 hover:cursor-pointer border border-solid border-red-600 rounded-sm"
-        onClick={handleClick}
         disabled={!description}
       >
         Add
       </button>
-    </div>
+    </form>
   )
 }

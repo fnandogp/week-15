@@ -1,10 +1,10 @@
-import TodoList from './components/TodoList'
+import TodoApp from './components/TodoApp'
 import { TodoListContextProvider } from './utils/useTodoList'
 
 function App() {
   return (
     <TodoListContextProvider>
-      <TodoList />
+      <TodoApp />
     </TodoListContextProvider>
   )
 }
