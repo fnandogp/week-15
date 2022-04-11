@@ -1,4 +1,4 @@
-export default function TodoSummary({ todos }) {
+export default function Summary({ todos }) {
   const openTodos = todos.filter((todo) => !todo.completed)
   const completedTodos = todos.filter((todo) => todo.completed)
 
